@@ -28,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
                 icon: const Icon(
                   Icons.refresh,
                   color: Colors.white,
-                  size: 35,
+                  size: 38,
                 ))
           ],
           centerTitle: true,
