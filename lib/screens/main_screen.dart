@@ -57,11 +57,16 @@ class _MainScreenState extends State<MainScreen> {
         ));
   }
 
-  Text getTurn() {
-    return Text(
-      isTurnO ? "Turn O" : "Turn X",
-      style: const TextStyle(
-          color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+  Widget getTurn() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Text(
+        isTurnO ? "Turn O" : "Turn X",
+        style: TextStyle(
+            color: isTurnO ? Colors.red : Colors.blue,
+            fontSize: 30,
+            fontWeight: FontWeight.bold),
+      ),
     );
   }
 
@@ -106,14 +111,15 @@ class _MainScreenState extends State<MainScreen> {
                 child: Container(
                   height: 100,
                   width: 100,
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.grey)),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15)),
                   child: Center(
                       child: Text(
                     xOrOList[index],
                     style: TextStyle(
                         color:
-                            xOrOList[index] == "X" ? Colors.white : Colors.red,
+                            xOrOList[index] == "X" ? Colors.blue : Colors.red,
                         fontSize: 50,
                         fontWeight: FontWeight.bold),
                   )),
@@ -233,14 +239,14 @@ class _MainScreenState extends State<MainScreen> {
             padding: EdgeInsets.all(8.0),
             child: Text(
               "Player O",
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              style: TextStyle(color: Colors.red, fontSize: 25),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               scoreO.toString(),
-              style: const TextStyle(color: Colors.white, fontSize: 25),
+              style: const TextStyle(color: Colors.red, fontSize: 25),
             ),
           )
         ]),
@@ -249,14 +255,14 @@ class _MainScreenState extends State<MainScreen> {
             padding: EdgeInsets.all(8.0),
             child: Text(
               "Player X",
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              style: TextStyle(color: Colors.blue, fontSize: 25),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               scoreX.toString(),
-              style: const TextStyle(color: Colors.white, fontSize: 25),
+              style: const TextStyle(color: Colors.blue, fontSize: 25),
             ),
           )
         ]),
